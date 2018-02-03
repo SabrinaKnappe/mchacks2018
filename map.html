@@ -71,7 +71,7 @@ map.on('load', function() {
                     "type": "Feature",
                     "properties": {
                         "description": "<strong>3422 Durocher</strong><p><a href=\"https://www.padmapper.com/apartments/pl15584604/3-bedroom-montreal-qc" target=\"_blank\" title=\"Opens in a new window\"></a> 3 bedroom apartments.</p>",
-                        "icon": "apartment"
+                        "icon": "house"
                     },
                     "geometry": {
                         "type": "Point",
@@ -81,7 +81,7 @@ map.on('load', function() {
                     "type": "Feature",
                     "properties": {
                         "description": "<strong>3440 Durocher</strong><p><a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\"></a>m. 1 and 2 bedroom apartments.</p>",
-                        "icon": "apartment"
+                        "icon": "house"
                     },
                     "geometry": {
                         "type": "Point",
@@ -90,18 +90,8 @@ map.on('load', function() {
                 }, {
                     "type": "Feature",
                     "properties": {
-                        "description": "<strong>Big Backyard Beach Bash and Wine Fest</strong><p>EatBar (2761 Washington Boulevard Arlington VA) is throwing a <a href=\"http://tallulaeatbar.ticketleap.com/2012beachblanket/\" target=\"_blank\" title=\"Opens in a new window\">Big Backyard Beach Bash and Wine Fest</a> on Saturday, serving up conch fritters, fish tacos and crab sliders, and Red Apron hot dogs. 12:00-3:00 p.m. $25.grill hot dogs.</p>",
-                        "icon": "bar"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-73.575349, 45.508399]
-                    }
-                }, {
-                    "type": "Feature",
-                    "properties": {
                         "description": "<strong>3450 Durocher</strong><p>The <a href=\"http://ballstonarts-craftsmarket.blogspot.com/\" target=\"_blank\" title=\"Opens in a new window\"></a> 1 and 2 bedroom apartments. </p>",
-                        "icon": "apartment"
+                        "icon": "house"
                     },
                     "geometry": {
                         "type": "Point",
@@ -118,8 +108,8 @@ map.on('load', function() {
 
     // Create a popup, but don't add it to the map yet.
     var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
+        closeButton: true,
+        closeOnClick: true
     });
 
     map.on('mouseenter', 'places', function(e) {

@@ -37,7 +37,7 @@ int main(int argc, char* argv[]){
     }
   }
   
-for(i=0; i<n && array[i] != '='; i++){
+for( ; i<n && array[i] != '='; i++){
     ;
 }
   
@@ -55,7 +55,7 @@ for( ; i<n && array[i] != '&'; i++){
   j++;
 }
 
-for(i=0; i<n && array[i] != '='; i++){
+for( ; i<n && array[i] != '='; i++){
     ;
 }
   
@@ -73,7 +73,7 @@ for( ; i<n && array[i] != '&'; i++){
   k++;
 }
      
-for(i=0; i<n && array[i] != '='; i++){
+for( ; i<n && array[i] != '='; i++){
     ;
 }
      
@@ -107,7 +107,7 @@ for( ; i<n && array[i] != '&'; i++){
   m++;
 }
      
-for(i=0; i<n && array[i] != '='; i++){
+for( ; i<n && array[i] != '='; i++){
     ;
 }
   
@@ -125,7 +125,7 @@ for( ; i<n && array[i] != '&'; i++){
   g++;
 }
      
-for(i=0; i<n && array[i] != '='; i++){
+for( ; i<n && array[i] != '='; i++){
     ;
 }
   

@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+<title> HoodHunters </title>
+
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css' rel='stylesheet' />
+  
+  <meta charset='utf-8' />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:10; padding:10; }
+        #map { position:center; top:center; bottom:center; width:100%; }
+    </style>
+
+</head>
+
+<body>
+
+<a href="https://www.w3schools.com">
+    <img border="0" alt="W3Schools" src="http://cs.mcgill.ca/~sknapp1/29360.png" width="50" height="50"></img>
+</a>
+
+
+        <div id='map' style='width: 1100px; height: 700px; margin: auto;'></div>
+        <script>
+                 mapboxgl.accessToken = 'pk.eyJ1IjoiYXNwaWxrZXZpdHoiLCJhIjoiY2pkN2xzYjB3NjE5eTJ3bzV5eTk3MWtlZyJ9.wkuVHng1Vbixhv0cYRSyeA';
+                var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v10'
+                });
+        </script>
+
+        <div id='map'></div>
+        <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoiYXNwaWxrZXZpdHoiLCJhIjoiY2pkN2xzYjB3NjE5eTJ3bzV5eTk3MWtlZyJ9.wkuVHng1Vbixhv0cYRSyeA';
+                var map = new mapboxgl.Map({
+                 container: 'map', // container id
+                 style: 'mapbox://styles/mapbox/streets-v9',
+                 center: [-73.575349, 45.508399], //starting position   
+                 zoom: 16.4 // starting zoom
+        });
+                // Add zoom and rotation controls to the map.
+                map.addControl(new mapboxgl.NavigationControl());
+        </script>
+
+
+    
+    
+
+    
+    
+</body>
+    
+</html>

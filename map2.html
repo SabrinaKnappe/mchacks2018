@@ -18,8 +18,24 @@
 #marker {
     background-image: url('http://cs.mcgill.ca/~sknapp1/29360.png');
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+</style>
+    
+<style>
+
+#marker2 {
+    background-image: url('http://cs.mcgill.ca/~sknapp1/29360.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -34,29 +50,42 @@
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXNwaWxrZXZpdHoiLCJhIjoiY2pkN2xzYjB3NjE5eTJ3bzV5eTk3MWtlZyJ9.wkuVHng1Vbixhv0cYRSyeA';
 
-var monument = [-73.5732521, 45.507398];
+var abbys = [-73.5732521, 45.507398];
 var mcgill= [-73.577601, 45.505246];
+var lacite= [-73.576529, 45.510402];
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
-    center: monument,
+    center: mcgill,
     zoom: 15
 });
 
 // create the popup
 var popup = new mapboxgl.Popup()
     .setText('Construction on the Washington Monument began in 1848.');
+    
+var popup2 = new mapboxgl.Popup()
+    .setText('Hey there.');
 
 // create DOM element for the marker
 var el = document.createElement('div');
 el.id = 'marker';
+    
+var ek = document.createElement('div');
+ek.id = 'marker2';
 
 // create the marker
 new mapboxgl.Marker(el)
-    .setLngLat(mcgill)
+    .setLngLat(abbys)
     .setPopup(popup) // sets a popup on this marker
     .addTo(map);
 
+//another marker
+new mapboxgl.Marker(ek)
+    .setLngLat(lacite)
+    .setPopup(popup2) // sets a popup on this marker
+    .addTo(map);
+    
 </script>
 
 </body>

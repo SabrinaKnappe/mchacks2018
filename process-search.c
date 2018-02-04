@@ -64,7 +64,7 @@ for( ; i<n && array[i] != '&'; i++){
     }
   }
   
-
+printf("<p> %s </p>", results);
 
 return 0;
 }

@@ -28,14 +28,13 @@
     max-width: 200px;
 }
 
-</style>
-
 <div id='map'></div>
 
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXNwaWxrZXZpdHoiLCJhIjoiY2pkN2xzYjB3NjE5eTJ3bzV5eTk3MWtlZyJ9.wkuVHng1Vbixhv0cYRSyeA';
 
 var monument = [-73.5732521, 45.507398];
+var mcgill= [-73.577601, 45.505246];
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
@@ -53,7 +52,7 @@ el.id = 'marker';
 
 // create the marker
 new mapboxgl.Marker(el)
-    .setLngLat(monument)
+    .setLngLat(mcgill)
     .setPopup(popup) // sets a popup on this marker
     .addTo(map);
 

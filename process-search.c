@@ -8,6 +8,7 @@ int main(int argc, char *argv[]){
 
   int stnum;
   char stname[10000];
+  FILE *search;
   
   int n = atoi(getenv("CONTENT_LENGTH"));
   char array[n];
@@ -15,11 +16,11 @@ int main(int argc, char *argv[]){
 
   int i;
   
-  for(i=0; i<n && array[i] != '='){
+  for(i=0; i<n && array[i] != '='; i++){
       ;
   }
   
-  for( ; i<n && array[i] != '+'){
+  for( ; i<n && array[i] != '+'; i++){
     const char *a = &(array[i]);
       char *cat;
       cat = malloc(20);
@@ -31,7 +32,7 @@ int main(int argc, char *argv[]){
     }
   }
   
-  for( ; i<n && array[i] != '='){
+  for( ; i<n && array[i] != '='; i++){
       ;
   }
   
@@ -49,6 +50,19 @@ for( ; i<n && array[i] != '&'; i++){
   g++;
 }
   
+  search = fopen("results.csv", "r");
+  char results[50];
+  fgets(results, 50, search);
+  
+  
+  int t;
+  
+  for (t=0; results[t] != '/0'; t++){
+    if (results[t] == stnum){
+      if(results[t+1] == stname){
+      }
+    }
+  }
   
 
 

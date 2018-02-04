@@ -13,6 +13,7 @@ int main(int argc, char* argv[]){
   char satll[20];
   char satap[20];
   char comments[1000];
+  FILE *search;
   
   int n = atoi(getenv("CONTENT_LENGTH"));
         char array[n];
@@ -142,5 +143,11 @@ for( ; i<n && array[i] != '&'; i++){
      
   p++;
 }
+  
+search = fopen("results.csv", "w");
+  
+  fprintf(search, "%d,%s,%s,%d,%s,%s,%s\n", ad, stname, ll, rent, satll, satap, comments);
+  
+  
   return 0;
 }

@@ -133,7 +133,7 @@ int p = 0;
 for( ; i<n && array[i] != '&'; i++){ 
   
   if(array[i] == '+'){
-    array[p] = ' ';
+    comments[p] = ' ';
   }
      
   else{

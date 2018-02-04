@@ -7,7 +7,7 @@
 int main(int argc, char* argv[]){
   
   int ad;
-  char stname[20]
+  char stname[20];
   char ll[30];
   int rent;
   char satll[20];
@@ -44,7 +44,7 @@ for(i=0; i<n && array[i] != '='; i++){
 int j = 0;
 for( ; i<n && array[i] != '&'; i++){ 
   
-  if(array[i] == '+'{
+  if(array[i] == '+'){
     array[j] = ' ';
   }
      
@@ -62,7 +62,7 @@ for(i=0; i<n && array[i] != '='; i++){
 int k = 0;
 for( ; i<n && array[i] != '&'; i++){ 
   
-  if(array[i] == '+'{
+  if(array[i] == '+'){
     array[k] = ' ';
   }
      
@@ -96,7 +96,7 @@ for(i=0; i<n && array[i] != '='; i++){
 int m = 0;
 for( ; i<n && array[i] != '&'; i++){ 
   
-  if(array[i] == '+'{
+  if(array[i] == '+'){
     array[m] = ' ';
   }
      
@@ -111,18 +111,18 @@ for(i=0; i<n && array[i] != '='; i++){
     ;
 }
   
-int n = 0;
+int g = 0;
 for( ; i<n && array[i] != '&'; i++){ 
   
-  if(array[i] == '+'{
-    array[n] = ' ';
+  if(array[i] == '+'){
+    array[g] = ' ';
   }
      
   else{
-   satap[n] = array[i];
+   satap[g] = array[i];
   }
      
-  n++;
+  g++;
 }
      
 for(i=0; i<n && array[i] != '='; i++){
@@ -132,7 +132,7 @@ for(i=0; i<n && array[i] != '='; i++){
 int p = 0;
 for( ; i<n && array[i] != '&'; i++){ 
   
-  if(array[i] == '+'{
+  if(array[i] == '+'){
     array[p] = ' ';
   }
      
@@ -142,10 +142,5 @@ for( ; i<n && array[i] != '&'; i++){
      
   p++;
 }
-
-        }
-
-
-  
-  
   return 0;
+}

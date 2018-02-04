@@ -8,10 +8,11 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+        #map { position:absolute; top:0; bottom:0; width:90%; }
     </style>
 </head>
 <body>
+
 
 <style>
 
@@ -28,7 +29,23 @@
     max-width: 200px;
 }
 </style>
-    
+
+<style>
+
+#marker2 {
+    background-image: url('http://cs.mcgill.ca/~sknapp1/29360.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+        max-width: 200px;
+}
+</style>
+
 <style>
 
 #marker2 {
@@ -44,14 +61,14 @@
     max-width: 200px;
 }
 </style>
-    
+
 <div id='map'></div>
 
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXNwaWxrZXZpdHoiLCJhIjoiY2pkN2xzYjB3NjE5eTJ3bzV5eTk3MWtlZyJ9.wkuVHng1Vbixhv0cYRSyeA';
 
 var abbys = [-73.5732521, 45.507398];
-var mcgill= [-73.577601, 45.505246];
+var mcgill= [-73.574653, 45.508382];
 var lacite= [-73.576529, 45.510402];
 var map = new mapboxgl.Map({
     container: 'map',
@@ -63,14 +80,14 @@ var map = new mapboxgl.Map({
 // create the popup
 var popup = new mapboxgl.Popup()
     .setText('Construction on the Washington Monument began in 1848.');
-    
-var popup2 = new mapboxgl.Popup()
-    .setText('Hey there.');
+    // create the popup
+var popup1 = new mapboxgl.Popup()
+    .setText('Hey there!');
 
 // create DOM element for the marker
 var el = document.createElement('div');
 el.id = 'marker';
-    
+
 var ek = document.createElement('div');
 ek.id = 'marker2';
 
@@ -83,10 +100,11 @@ new mapboxgl.Marker(el)
 //another marker
 new mapboxgl.Marker(ek)
     .setLngLat(lacite)
-    .setPopup(popup2) // sets a popup on this marker
+    .setPopup(popup1) // sets a popup on this marker
     .addTo(map);
-    
+
 </script>
 
 </body>
 </html>
+

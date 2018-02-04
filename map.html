@@ -1,47 +1,165 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-
-<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css' rel='stylesheet' />
-  
-  <meta charset='utf-8' />
+    <meta charset='utf-8' />
+    <title>Hood Hunters</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
-        #map { position:center; top:0; bottom:0; width:100%; }
+        #map { position:center; top:center; bottom:center; width:90%; }
     </style>
-
+    <link rel="icon" href="http://cs.mcgill.ca/~sknapp1/hoodhunterslogo.png">
 </head>
 
 <body>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiYXNwaWxrZXZpdHoiLCJhIjoiY2pkN2xzYjB3NjE5eTJ3bzV5eTk3MWtlZyJ9.wkuVHng1Vbixhv0cYRSyeA';
-  var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
-  });
-</script>
-  
-  <div id='map'></div>
+<img border="0" alt="Hood Hunters" src="http://cs.mcgill.ca/~sknapp1/hoodhunterslogo.png" width="50" height="50"></img>
+
+<form action= "/cgi-bin/query-results" method= "POST">
+        <div style="text-align: right;">
+        Search for an address: <input type= "text" name= "searchad">
+        <input type= "submit" value= "Submit"></div>
+</form>
+
+<br>
+
+<style>
+
+#marker {
+    background-image: url('http://cs.mcgill.ca/~sknapp1/29360.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+</style>
+
+<style>
+
+#marker2 {
+    background-image: url('http://cs.mcgill.ca/~sknapp1/29360.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+</style>
+
+<style>
+
+#marker3 {
+    background-image: url('http://cs.mcgill.ca/~sknapp1/29360.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+</style>
+
+<style>
+
+#marker4 {
+    background-image: url('http://cs.mcgill.ca/~sknapp1/29360.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+</style>
+
+<div id='map' style= 'width:1100px; height:700px; margin: auto;' ></div>
+
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXNwaWxrZXZpdHoiLCJhIjoiY2pkN2xzYjB3NjE5eTJ3bzV5eTk3MWtlZyJ9.wkuVHng1Vbixhv0cYRSyeA';
+
+var abbys = [-73.5732521, 45.507398];
+var mcgill= [-73.574653, 45.508382];
+var lacite= [-73.576529, 45.510402];
+var lesapp= [-73.578244, 45.510528];
+var lelorne=[-73.577478, 45.507693];
+
 var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: [-73.5760, 45.5106], // starting position
-    zoom: 14 // starting zoom
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v9',
+    center: mcgill,
+    zoom: 15.8
 });
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
+
+// create the popup
+var popup = new mapboxgl.Popup()
+    .setText("3422 Durocher. 5 1/2 3 bedroom 2 bathroom");
+
+// create the popup
+var popup1 = new mapboxgl.Popup()
+    .setText("350 Prince Arthur");
+
+// create the popup
+var popup2 = new mapboxgl.Popup()
+    .setText("406 des Pins");
+
+var popup3 = new mapboxgl.Popup()
+    .setText("3580 Lorne");
+
+// create DOM element for the marker
+var el = document.createElement('div');
+el.id = 'marker';
+    
+var ek = document.createElement('div');
+ek.id = 'marker2';
+
+var em = document.createElement('div');
+em.id = 'marker3';
+
+var en = document.createElement('div');
+en.id = 'marker4';
+
+// create the marker
+new mapboxgl.Marker(el)
+    .setLngLat(abbys)
+    .setPopup(popup) // sets a popup on this marker
+    .addTo(map);
+
+//another marker
+new mapboxgl.Marker(ek)
+    .setLngLat(lacite)
+    .setPopup(popup1) // sets a popup on this marker
+    .addTo(map);
+
+//another marker
+new mapboxgl.Marker(em)
+    .setLngLat(lesapp)
+    .setPopup(popup2)
+    .addTo(map);
+
+new mapboxgl.Marker(en)
+    .setLngLat(lelorne)
+    .setPopup(popup3)
+    .addTo(map);    
+
 </script>
 
-
-
 </body>
-
 </html>
